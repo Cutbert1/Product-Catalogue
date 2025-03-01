@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+STATUS = ((0, "Draft"), (1, "Published"))
 
 # Create your models here.
 
@@ -8,7 +9,10 @@ from django.contrib.auth.models import User
 class Product(models.Model):
 
     name = models.CharField(max_length=255, verbose_name="Product Name")
-    description = models.TextField(verbose_name="Product Description")
+    marketer = models.ForeignKey(
+        User, on_delete=models.CASCADE, null=True, verbose_name="Marketer"
+        )
+    description = models.TextField(verbose_name="Description")
     price = models.DecimalField(
         max_digits=10, decimal_places=2, verbose_name="Product Price"
         )
@@ -18,6 +22,7 @@ class Product(models.Model):
     created_on = models.DateTimeField(
         auto_now_add=True, verbose_name="Creation Date"
         )
+    status = models.IntegerField(choices=STATUS, default=0)
     updated_on = models.DateTimeField(
         auto_now=True, verbose_name="Last Updated Date"
         )
@@ -33,10 +38,10 @@ class Product(models.Model):
 
 class Review(models.Model):
     post = models.ForeignKey(
-        Product, on_delete=models.CASCADE, related_name='reviews'
+        Product, on_delete=models.CASCADE, verbose_name='reviews'
     )
     author = models.ForeignKey(
-        User, on_delete=models.CASCADE, related_name='reviewer'
+        User, on_delete=models.CASCADE, verbose_name='reviewer'
     )
     body = models.TextField()
     is_approved = models.BooleanField(default=False)
@@ -48,4 +53,4 @@ class Review(models.Model):
         verbose_name_plural = 'Reviews'
 
     def __str__(self):
-        return f'Comment by {self.author} on {self.post}'
+        return f'Review by {self.author} on {self.post}'
