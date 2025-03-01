@@ -15,7 +15,7 @@ class ProductListView(generic.ListView):
     """View to list of published products with pagination."""
 
     template_name = "store/index.html"
-    paginate_by = 8
+    paginate_by = 9
     queryset = None
 
     def get_queryset(self):
