@@ -6,11 +6,11 @@
     <title>Product List Views</title>
 </head>
 <body>
-    <h1>Products list</h1>
+    <h1>Product list</h1>
     {% for product in object_list %}
     <h2>{{product.name}}</h2>
-    <p>{{product.description}}</p>
     <p>Marketer: {{product.marketer}}</p>
+    <p>Price: ${{ product.price }}</p>
     {% endfor %}
 </body>
 </html> 

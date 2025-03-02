@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+ 
+{% block content %}
+<title>{{ product.name }} - Product Detail</title>
+ 
+<h2>{{ product.name }}</h2>
+ 
+<div>
+    <img src="{% static 'images/'|add:product.image.name %}" alt="{{ product.name }}">
+</div>
+<h2>{{ product.name }}</h2>
+<div class="card-body">
+    <article class="card-text">
+        <h2>Product Description</h2>
+        <p>{{ product.description | safe }}</p>
+    </article>
+</div>
+
+<p><strong>Price: ${{ product.price }}</strong></p>
+ 
+<a href="{% url 'home' %}">Back to Product List</a>
+{% endblock content %}
+
+
+

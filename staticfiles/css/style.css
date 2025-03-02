@@ -15,16 +15,8 @@ body {
 }
 
 .brand {
-    font: 700 1.4rem Lato, sans-serif;
+    font: 200 1.4rem Lato, sans-serif;
     color: var(--color-text);
-}
-
-.red-o {
-    color: var(--color-secondary);
-}
-
-.thin {
-    font-weight: 300;
 }
 
 .light-bg {
@@ -57,11 +49,11 @@ body {
     height: auto;
 }
 
-.author {
+/*.author {
     color: white;
     margin: 4px;
     text-transform: uppercase;
-}
+}*/
 
 .masthead {
     margin-top: 10px;
@@ -105,9 +97,9 @@ body {
     color: var(--color-secondary);
 }
 
-.product-title {
+/*.product-title {
     margin: 10% 0 0 5%;
-}
+}*/
 
 .product-subtitle {
     margin-left: 5%;
