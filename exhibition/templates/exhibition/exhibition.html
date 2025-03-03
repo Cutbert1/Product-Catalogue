@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-12 col-md-4 text-center">
+            <img src="{% static 'images/'|add:exhibition.image.name %}" alt="{{ exhibition.title }}">
+        </div>
+        <div class="col-12 col-md-8">
+            <h2>{{ exhibition.title }}</h2>
+            {{ exhibition.description | safe }}
+        </div>
+    <div class="col-6 col-md-4">
+        <div>
+            <div class="col text-right">
+               <p class="text-end">Venue: {{ exhibition.venue }}</p>
+            </div>
+    
+            <div class="col text-right">
+                <p class="text-end">Capacity: {{ exhibition.max_attendees}}</p>
+            </div>
+            
+            <div class="col text-right">
+                <p class="text-end">Start date: {{ exhibition.start_date }}</p>
+            </div>
+            <div class="col text-right">
+                <p class="text-end">End date: {{ exhibition.end_date}}</p>
+            </div>
+        </div>        
+    </div>
+    <div class="row">
+        <div class="col text-right"> 
+          <p class="text-end"><em>Updated on: {{ exhibition.updated_on }}</em></p>
+        </div>
+    </div>
+</div>
+{% endblock%}
