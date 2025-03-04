@@ -22,8 +22,9 @@ from django.urls import path, include
 
 
 urlpatterns = [
-    path("exhibition/", include("exhibition.urls"), name="exhibition-urls"),
     path('admin/', admin.site.urls),
+    path("accounts/", include("allauth.urls")),
+    path("exhibition/", include("exhibition.urls"), name="exhibition-urls"),
     path("", include("store.urls"), name="store-urls"),
     path('summernote/', include('django_summernote.urls')),
     # path('store/', my_store, name='store'),
