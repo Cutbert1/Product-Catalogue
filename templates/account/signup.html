@@ -1,21 +1,62 @@
-{% extends "account/base.html" %}
-
+{% extends "base.html" %}
+ 
 {% load i18n %}
-
+ 
 {% block head_title %}{% trans "Signup" %}{% endblock head_title %}
-
+ 
 {% block content %}
-<h1>{% trans "Sign Up" %}</h1>
-
-<p>{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">sign in</a>.{% endblocktrans %}</p>
-
-<form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
-  {% csrf_token %}
-  {{ form.as_p }}
-  {% if redirect_field_value %}
-  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-  {% endif %}
-  <button type="submit">{% trans "Sign Up" %} &raquo;</button>
-</form>
-
+<div class="container">
+    <div class="row">
+      <div class="col-md-8 mt-3 offset-md-2">
+          <h3>{% trans "Sign Up" %}</h3>
+          <p>{% blocktrans %}
+          Welcome to Shoprite Hand Craft products.
+          Already have an account? Please <a class="link" href="{{ login_url }}">sign in</a>
+          instead
+          {% endblocktrans %}
+        </p>
+      </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8 mt-3 offset-md-2">
+          {% if form.errors %}
+            <div class="alert alert-danger">
+              <strong>{% trans "Error:" %}</strong>
+              <ul>
+                {% for field, errors in form.errors.items %}
+                  {% for error in errors %}
+                    <li>{{ error }}</li>
+                  {% endfor %}
+                {% endfor %}
+              </ul>
+            </div>
+          {% endif %}
+          <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
+            {% csrf_token %}
+            {% for field in form %}
+              <div class="form-group">
+                {{ field.label_tag }}
+                {{ field }}
+                {% if field.help_text %}
+                  <small class="form-text text-muted">{{ field.help_text }}</small>
+                {% endif %}
+                {% for error in field.errors %}
+                  <div class="invalid-feedback d-block">
+                    {{ error }}
+                  </div>
+                {% endfor %}
+              </div>
+            {% endfor %}
+            {% if redirect_field_value %}
+            <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+            {% endif %}
+            <button class="btn btn-signup right" type="submit">{% trans "Sign Up" %} &raquo;</button>
+          </form>
+      </div>
+    </div>
+</div>
+ 
 {% endblock content %}
+
+
+

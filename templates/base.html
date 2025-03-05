@@ -35,7 +35,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white">
         <div class="container-fluid">
-            <a class="navbar-brand" href="{% url 'home' %}"><span class="brand"><span><strong>S</strong>hop<strong>R</strong>ite</span></a>
+            <a class="navbar-brand" href="{% url 'home' %}"><span class="brand"><span><strong>Shop<em>Rite</em>  Hand<em>Craft</em></strong></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
                 aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -58,7 +58,7 @@
                     {% else %}
                     <li class="nav-item">
                         <a class="nav-link {% if request.path == signup_url %}active{% endif %}" aria-current="page"
-                            href="{% url 'account_signup' %}">Register</a>
+                            href="{% url 'account_signup' %}">Singup</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link {% if request.path == login_url %}active{% endif %}" aria-current="page"
@@ -68,13 +68,19 @@
 
                 </ul>
                 <span class="navbar-text text-muted">
-                    Hand Craft Prodcut Review
+                    Local Hand Craft Prodcut Review
                 </span>
             </div>
         </div>
     </nav>
 
     <main class="flex-shrink-0 main-bg">
+        
+        {% if user.is_authenticated %}
+        <p class="text-left m-4">You are logged in as {{ user }}</p>
+        {% else %}
+        <p class="text-left m-4">Please log in to continue</p>
+        {% endif %}
 
         {% block content %}
         <!-- Content Goes here -->
