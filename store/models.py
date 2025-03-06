@@ -61,4 +61,4 @@ class Review(models.Model):
         verbose_name_plural = 'Reviews'
 
     def __str__(self):
-        return f'Review by {self.author} on {self.post}'
+        return f'Review by {self.author} on {self.product}'

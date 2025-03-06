@@ -154,3 +154,7 @@ body {
 .is_approved {
     color: var(--color-is_approved);
 }
+
+#reviewForm {
+    margin-top: 1.3em;
+}
