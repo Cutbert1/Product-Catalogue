@@ -27,8 +27,14 @@ class product_list(generic.ListView):
 def product_detail(request, slug):
     queryset = Product.objects.filter(status=1)
     product = get_object_or_404(queryset, slug=slug)
+    reviews = product.review_set.all().order_by('-created_at')
+    review_count = product.review_set.filter(is_approved=True).count()
 
-    context = {"product": product}
+    context = {
+        "product": product,
+        "reviews": reviews,
+        "review_count": review_count
+    }
 
     return render(
         request,

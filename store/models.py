@@ -42,13 +42,16 @@ class Product(models.Model):
 
 
 class Review(models.Model):
-    post = models.ForeignKey(
+    product = models.ForeignKey(
         Product, on_delete=models.CASCADE, verbose_name='reviews'
     )
     author = models.ForeignKey(
         User, on_delete=models.CASCADE, verbose_name='reviewer'
     )
+    caption = models.TextField(null=True)
     body = models.TextField()
+    image = models.ImageField(
+        default="review_default_jpg", upload_to="reviews/", null=True)
     is_approved = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
 

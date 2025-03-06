@@ -6,7 +6,7 @@
     --color-text: #4A4A4F;
     --color-white: #fff;
     --color-faded: rgb(172, 175, 175);
-    --color-approval: rgb(222, 146, 168);
+    --color-is_approved: rgb(222, 146, 168);
     --color-link: #23BBBB;
 }
 
@@ -151,6 +151,6 @@ body {
     color: var(--color-faded);
 }
 
-.approval {
-    color: var(--color-approval);
+.is_approved {
+    color: var(--color-is_approved);
 }
