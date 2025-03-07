@@ -5,7 +5,7 @@ from django import forms
 class ReviewForm(forms.ModelForm):
     class Meta:
         model = Review
-        fields = ("body",)
+        fields = ("caption", "body")
 
     def clean_body(self):
         body = self.cleaned_data.get('body')

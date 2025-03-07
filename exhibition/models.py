@@ -29,3 +29,26 @@ class Exhibition(models.Model):
         verbose_name = "Exhibition"
         verbose_name_plural = "Exhibitions"
         ordering = ['start_date']
+
+
+class ExhibitionRegistration(models.Model):
+    MAX_LENGTH_BUSINESS_NAME = 255
+    MAX_LENGTH_ADDRESS = 255
+    MAX_LENGTH_PRODUCT_DESCRIPTION = 500
+
+    business_name = models.CharField(max_length=MAX_LENGTH_BUSINESS_NAME)
+    address = models.CharField(max_length=MAX_LENGTH_ADDRESS)
+    email = models.EmailField()
+    phone_number = models.CharField(max_length=15)
+    product_description = models.TextField(
+        max_length=MAX_LENGTH_PRODUCT_DESCRIPTION
+        )
+    is_read = models.BooleanField(default=False)
+
+    def __str__(self):
+        return f"Exhibition registration from {self.business_name}"
+
+    class Meta:
+        verbose_name = "Exhibition Registration"
+        verbose_name_plural = "Exhibition Registrations"
+        ordering = ['business_name']

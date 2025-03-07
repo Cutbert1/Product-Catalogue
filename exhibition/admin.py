@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Exhibition
+from .models import Exhibition, ExhibitionRegistration
 from django_summernote.admin import SummernoteModelAdmin
 
 # Register your models here.
@@ -14,3 +14,9 @@ class ExhibitionAdmin(SummernoteModelAdmin):
     search_fields = ['title', 'description']
     list_filter = ('scheduled_status', 'start_date', 'end_date', 'created_on')
     summernote_fields = ('description',)
+
+
+@admin.register(ExhibitionRegistration)
+class ExhibitionRegistrationAdmin(admin.ModelAdmin):
+
+    list_display = ('product_description', 'is_read',)

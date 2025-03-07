@@ -1,6 +1,8 @@
 {% extends 'base.html' %}
-{% block content %}
 {% load static %}
+{% load crispy_forms_tags %}
+
+{% block content %}
 
 
 <div class="container mt-5">
@@ -15,18 +17,16 @@
     <div class="col-6 col-md-4">
         <div>
             <div class="col text-right">
-               <p class="text-end">Venue: {{ exhibition.venue }}</p>
-            </div>
-    
-            <div class="col text-right">
-                <p class="text-end">Capacity: {{ exhibition.max_attendees}}</p>
-            </div>
-            
-            <div class="col text-right">
-                <p class="text-end">Start date: {{ exhibition.start_date }}</p>
+               <p class="text-end">Venue: <strong>{{ exhibition.venue }}</strong></p>
             </div>
             <div class="col text-right">
-                <p class="text-end">End date: {{ exhibition.end_date}}</p>
+                <p class="text-end">Start date: <strong>{{ exhibition.start_date }}</strong></p>
+            </div>
+            <div class="col text-right">
+                <p class="text-end">End date: <strong>{{ exhibition.end_date}}</strong></p>
+            </div>
+            <div class="col text-right">
+                <p class="text-end">Capacity: <strong>{{ exhibition.max_attendees}}</strong></p>
             </div>
         </div>        
     </div>
@@ -34,6 +34,30 @@
         <div class="col text-right"> 
           <p class="text-end"><em>Updated on: {{ exhibition.updated_on }}</em></p>
         </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-6 my-5">
+            <h2>Register for Exhibition</h2>
+            <form method="post">
+                {% if form.errors %}
+                    <div class="alert alert-danger">
+                        <strong>Error:</strong> Please correct the following issues:
+                        <ul>
+                            {% for field, errors in form.errors.items %}
+                                {% for error in errors %}
+                                    <li>{{ field|capfirst }}: {{ error }}</li>
+                                {% endfor %}
+                            {% endfor %}
+                        </ul>
+                    </div>
+                {% endif %}
+                {{ exhibition_registration_form | crispy }}
+                {% csrf_token %}
+                <button class="btn btn-info" type="submit">Submit</button>
+            </form>
+            
+        </div>
+
     </div>
 </div>
 {% endblock%}

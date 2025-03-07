@@ -48,10 +48,10 @@ class Review(models.Model):
     author = models.ForeignKey(
         User, on_delete=models.CASCADE, verbose_name='reviewer'
     )
-    caption = models.TextField(null=True)
+    caption = models.TextField(max_length=255, blank=True, null=True)
     body = models.TextField()
     image = models.ImageField(
-        default="review_default_jpg", upload_to="reviews/", null=True)
+        default="review_default.jpg", upload_to="reviews/", null=True)
     is_approved = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
 
