@@ -1,16 +1,13 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.contrib import messages
 from django.views import generic
-# from django.http import HttpResponse
-from .models import Product
+from django.http import HttpResponseRedirect
+from .models import Product, Review
 from .forms import ReviewForm
 
 
 # Create your views here.
 
-
-# def my_store(request):
-# return HttpResponse('Hello, Store')
 
 class product_list(generic.ListView):
     """View to list of published products with pagination."""
@@ -42,6 +39,7 @@ def handle_review_submission(request, product):
             review.product = product
             review.save()
             messages.success(request, "Review submitted, awaiting approval")
+            return ReviewForm()
     else:
         review_form = ReviewForm()
     return review_form
@@ -62,3 +60,42 @@ def product_detail(request, slug):
         request,
         'store/product_detail.html',
         context)
+
+
+def review_edit(request, review_id, product_slug):
+    if request.method == "POST":
+        product = get_product_by_slug(product_slug)
+        review = get_review_by_id(review_id)
+        review_form = ReviewForm(data=request.POST, instance=review)
+
+        if is_review_editable(review_form, review, request.user):
+            save_review(review_form, product)
+            messages.success(request, "Review Updated")
+        else:
+            messages.error(request, "Error updating review")
+
+    return redirect_to_product_detail(product_slug)
+
+
+def get_product_by_slug(slug):
+    queryset = Product.objects.filter(status=1)
+    return get_object_or_404(queryset, slug=slug)
+
+
+def get_review_by_id(review_id):
+    return get_object_or_404(Review, pk=review_id)
+
+
+def is_review_editable(review_form, review, user):
+    return review_form.is_valid() and review.author == user
+
+
+def save_review(review_form, product):
+    review = review_form.save(commit=False)
+    review.product = product
+    review.is_approved = False
+    review.save()
+
+
+def redirect_to_product_detail(slug):
+    return redirect("product_detail", slug=slug)

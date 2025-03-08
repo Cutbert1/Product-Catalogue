@@ -34,7 +34,7 @@ class Exhibition(models.Model):
 class ExhibitionRegistration(models.Model):
     MAX_LENGTH_BUSINESS_NAME = 255
     MAX_LENGTH_ADDRESS = 255
-    MAX_LENGTH_PRODUCT_DESCRIPTION = 500
+    MAX_LENGTH_PRODUCT_DESCRIPTION = 1000
 
     business_name = models.CharField(max_length=MAX_LENGTH_BUSINESS_NAME)
     address = models.CharField(max_length=MAX_LENGTH_ADDRESS)

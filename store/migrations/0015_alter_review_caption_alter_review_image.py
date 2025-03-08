@@ -18,6 +18,8 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='review',
             name='image',
-            field=models.ImageField(default='review_default.jpg', null=True, upload_to='reviews/'),
+            field=models.ImageField(
+                default='review_default.jpg', null=True, upload_to='reviews/'
+                ),
         ),
     ]
