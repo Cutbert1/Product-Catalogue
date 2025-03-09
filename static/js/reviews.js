@@ -28,3 +28,24 @@ for (let button of editButtons) {
         }
     });
 }
+
+
+const deleteModalElement = document.getElementById("deleteModal");
+ 
+    if (deleteModalElement) {
+    const deleteModal = new bootstrap.Modal(deleteModalElement);
+    const deleteButtons = document.getElementsByClassName("btn-delete");
+    const deleteConfirm = document.getElementById("deleteConfirm");
+     
+    for (let button of deleteButtons) {
+        button.addEventListener("click", (e) => {
+            let reviewId = e.target.getAttribute("data-review_id");
+            if (deleteConfirm) {
+                deleteConfirm.href = `delete_review/${reviewId}`;
+            }
+            deleteModal.show();
+        });
+    }
+} else {
+    console.error("Issue with Modal");
+}

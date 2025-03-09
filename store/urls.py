@@ -8,4 +8,6 @@ urlpatterns = [
     path('<slug:slug>/', views.product_detail, name='product_detail'),
     path("<slug:slug>/edit_review/<int:review_id>",
          views.update_review, name="update_review"),
+    path("<slug:slug>/delete_review/<int:review_id>",
+         views.delete_review, name="delete_review"),
 ]

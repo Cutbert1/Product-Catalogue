@@ -1,7 +1,7 @@
-from django.shortcuts import render, get_object_or_404, redirect
+from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.contrib import messages
 from django.views import generic
-from django.http import HttpResponseRedirect # noqa
+from django.http import HttpResponseRedirect
 from .models import Product, Review
 from .forms import ReviewForm
 
@@ -99,3 +99,37 @@ def save_review(review_form, product):
 
 def redirect_to_product_detail(slug):
     return redirect("product_detail", slug=slug)
+
+
+def delete_review(request, slug, review_id):
+    product = get_active_product(slug)
+    review = get_review(review_id)
+
+    if is_review_author(review, request.user):
+        review.product = product
+        delete_user_review(review)
+        messages.success(request, "Review deleted")
+    else:
+        messages.error(request, "Unable to delete review")
+
+    return redirect_to_product_detail(slug)
+
+
+def get_active_product(slug):
+    return get_object_or_404(Product.objects.filter(status=1), slug=slug)
+
+
+def get_review(review_id):
+    return get_object_or_404(Review, pk=review_id)
+
+
+def is_review_author(review, user):
+    return review.author == user
+
+
+def delete_user_review(review):
+    review.delete()
+
+
+def redirect_to_product_detail(slug): # noqa
+    return HttpResponseRedirect(reverse("product_detail", args=[slug]))
