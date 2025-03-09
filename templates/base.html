@@ -71,8 +71,18 @@
                     Local Hand Craft Prodcut Review
                 </span>
             </div>
-        </div>
+        </div>      
     </nav>
+    {% if messages %}
+    <div class="alert alert-dismissible fade show" role="alert">
+        {% for message in messages %}
+            <div class="alert alert-{{ message.tags }}">
+                {{ message }}
+            </div>
+        {% endfor %}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    {% endif %}
 
     <main class="flex-shrink-0 main-bg">
         

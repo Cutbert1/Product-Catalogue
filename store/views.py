@@ -1,7 +1,7 @@
-from django.shortcuts import render, get_object_or_404, reverse, redirect
+from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib import messages
 from django.views import generic
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect # noqa
 from .models import Product, Review
 from .forms import ReviewForm
 
@@ -62,19 +62,19 @@ def product_detail(request, slug):
         context)
 
 
-def review_edit(request, review_id, product_slug):
+def update_review(request, review_id, slug):
     if request.method == "POST":
-        product = get_product_by_slug(product_slug)
+        product = get_product_by_slug(slug)
         review = get_review_by_id(review_id)
         review_form = ReviewForm(data=request.POST, instance=review)
 
-        if is_review_editable(review_form, review, request.user):
+        if is_authorized_to_update(review_form, review, request.user):
             save_review(review_form, product)
-            messages.success(request, "Review Updated")
+            messages.success(request, "Review Updated, awaiting approval")
         else:
             messages.error(request, "Error updating review")
 
-    return redirect_to_product_detail(product_slug)
+    return redirect_to_product_detail(slug)
 
 
 def get_product_by_slug(slug):
@@ -86,7 +86,7 @@ def get_review_by_id(review_id):
     return get_object_or_404(Review, pk=review_id)
 
 
-def is_review_editable(review_form, review, user):
+def is_authorized_to_update(review_form, review, user):
     return review_form.is_valid() and review.author == user
 
 
