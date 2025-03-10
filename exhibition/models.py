@@ -1,4 +1,5 @@
 from django.db import models
+from cloudinary.models import CloudinaryField
 
 STATUS = ((0, "Draft"), (1, "Published"))
 
@@ -13,8 +14,8 @@ class Exhibition(models.Model):
 
     title = models.CharField(max_length=255, unique=True)
     description = models.TextField()
-    image = models.ImageField(upload_to='exhibition/', verbose_name="Exhibition Image") # noqa
     scheduled_status = models.IntegerField(choices=STATUS_CHOICES, default=0)
+    exhibition_image = CloudinaryField('image', default='placeholder')
     venue = models.CharField(max_length=255)
     max_attendees = models.PositiveIntegerField()
     start_date = models.DateField()

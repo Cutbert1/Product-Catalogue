@@ -95,6 +95,9 @@ body {
     z-index: 100;
 }
 
+.exhibition-image {
+    width: 75%;
+}
 .product-link {
     text-decoration: none;
     color: var(--bg-dark);

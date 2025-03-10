@@ -3,15 +3,19 @@
 {% load crispy_forms_tags %}
  
 {% block content %}
+
 <title>{{ product.name }} - Product Detail</title>
 <div class="container">
     <div class="col-md-12 ">
         <h2>{{ product.name }}</h2>
     </div>
-    <div>
-        <img src="{% static 'images/'|add:product.image.name %}" alt="{{ product.name }}">
+    <div class="col-md-4">
+        {% if "placeholder" in product.product_image.url %} 
+        <img src="{% static 'images/'|add:product.image.name %}" class="text-center" alt="product image">
+        {% else %}
+        <img src="{{ product.products_image.url }}" class="text-center" alt="{{ product.name }}">
+        {% endif %}
     </div>
-
 </div>
 
 <div class="card-body">
@@ -59,8 +63,8 @@
                         </p>
                         {% endif %}
                         {% if user.is_authenticated and review.author == user %}
-                        <button class="btn btn-delete" data-review_id="{{ review.id }}">Delete</button>
                         <button class="btn btn-edit" data-review_id="{{ review.id }}">Edit</button>
+                        <button class="btn btn-delete" data-review_id="{{ review.id }}">Delete</button>
                         {% endif %}
                     </div>
                     {% endfor %}

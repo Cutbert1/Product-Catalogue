@@ -21,9 +21,6 @@ class Product(models.Model):
     price = models.DecimalField(
         max_digits=10, decimal_places=2, verbose_name="Product Price"
         )
-    image = models.ImageField(
-        upload_to='products/', verbose_name="Product Image"
-        )
     created_on = models.DateTimeField(
         auto_now_add=True, verbose_name="Creation Date"
         )
@@ -48,7 +45,6 @@ class Review(models.Model):
     author = models.ForeignKey(
         User, on_delete=models.CASCADE, verbose_name='reviewer'
     )
-    caption = models.TextField(max_length=255, blank=True, null=True)
     body = models.TextField()
     image = models.ImageField(
         default="review_default.jpg", upload_to="reviews/", null=True)
