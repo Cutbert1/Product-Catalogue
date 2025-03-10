@@ -19,13 +19,13 @@ body {
     color: var(--color-text);
 }
 
-.red-o {
+/* .red-o {
     color: var(--color-secondary);
-}
+} */
 
-.thin {
+/* .thin {
     font-weight: 300;
-}
+} */
 
 .light-bg {
     background-color: var(--color-white);
@@ -50,12 +50,12 @@ body {
     min-width: 30%;
     left: -2px;
     background-color: var(--color-primary);
-}
+} 
 
-.scale {
+/* .scale {
     width: 100%;
     height: auto;
-}
+} */
 
 .author {
     color: white;
@@ -78,12 +78,12 @@ body {
     position: relative;
 }
 
-.masthead-image {
+/*.masthead-image {
     position: relative;
     overflow: hidden;
-}
+}*/
 
-.masthead-image:after {
+/*.masthead-image:after {
     content: "";
     position: absolute;
     top: 0;
@@ -93,7 +93,7 @@ body {
     background: var(--bg-dark);
     transform: skew(15deg);
     z-index: 100;
-}
+}*/
 
 .exhibition-image {
     width: 75%;
@@ -112,10 +112,10 @@ body {
     margin: 10% 0 0 5%;
 }
 
-.product-subtitle {
+/* .product-subtitle {
     margin-left: 5%;
-    color: lightgray;
-}
+    color: lightgray; 
+} */
 
 .btn-signup,
 .btn-edit {

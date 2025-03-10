@@ -23,6 +23,7 @@ for (let button of editButtons) {
             if (reviewForm) {
                 reviewForm.setAttribute("action", `edit_review/${reviewId}`);
             }
+            
         } else {
             console.error(`Review element with ID 'review${reviewId}' not found`);
         }
