@@ -82,10 +82,8 @@ Project can be improved by adding ordering page were  site unregistered site use
 |Key Features:|   User Value   |Functionality Test|Outcome|
 |:------------|:----------------|:-------------|:------------|
 |Site user can signup with username and password|Enable user to review products|Click on Signup, provide username and password then signup ![signup](./static/images/readme-images/manual-test-images/signup.jpg)|Successfully signed up ![signup2](./static/images/readme-images/manual-test-images/signup2.jpg)|
+|Signed up user can login and review products|Review products|Click on a product and provide review ![signup-review](./static/images/readme-images/manual-test-images/signup-review.jpg)|Review submitted|
 
-### Features Test Result Compilation
-|Key Features|   Test Case  |Outcome|
-|:------------|:----------------|:-------------|
 ### Lighthouse Performance
 |View Tested|   Outcome of the audit  |Soulution Applied|Screenshot of clear Validator output|
 |:------------|:----------------|:-------------|:------------|
