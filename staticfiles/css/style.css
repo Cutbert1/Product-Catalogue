@@ -6,7 +6,7 @@
     --color-text: #4A4A4F;
     --color-white: #fff;
     --color-faded: rgb(172, 175, 175);
-    --color-is_approved: rgb(222, 146, 168);
+    --color-approval: rgb(222, 146, 168);
     --color-link: #23BBBB;
 }
 
@@ -15,9 +15,17 @@ body {
 }
 
 .brand {
-    font: 200 1.4rem Lato, sans-serif;
+    font: 700 1.4rem Lato, sans-serif;
     color: var(--color-text);
 }
+
+/* .red-o {
+    color: var(--color-secondary);
+} */
+
+/* .thin {
+    font-weight: 300;
+} */
 
 .light-bg {
     background-color: var(--color-white);
@@ -42,18 +50,18 @@ body {
     min-width: 30%;
     left: -2px;
     background-color: var(--color-primary);
-}
+} 
 
-.scale {
+/* .scale {
     width: 100%;
     height: auto;
-}
+} */
 
-/*.author {
+.author {
     color: white;
     margin: 4px;
     text-transform: uppercase;
-}*/
+}
 
 .masthead {
     margin-top: 10px;
@@ -70,12 +78,12 @@ body {
     position: relative;
 }
 
-.masthead-image {
+/*.masthead-image {
     position: relative;
     overflow: hidden;
-}
+}*/
 
-.masthead-image:after {
+/*.masthead-image:after {
     content: "";
     position: absolute;
     top: 0;
@@ -85,8 +93,11 @@ body {
     background: var(--bg-dark);
     transform: skew(15deg);
     z-index: 100;
-}
+}*/
 
+.exhibition-image {
+    width: 75%;
+}
 .product-link {
     text-decoration: none;
     color: var(--bg-dark);
@@ -97,14 +108,14 @@ body {
     color: var(--color-secondary);
 }
 
-/*.product-title {
+.product-title {
     margin: 10% 0 0 5%;
-}*/
-
-.product-subtitle {
-    margin-left: 5%;
-    color: lightgray;
 }
+
+/* .product-subtitle {
+    margin-left: 5%;
+    color: lightgray; 
+} */
 
 .btn-signup,
 .btn-edit {
@@ -151,10 +162,6 @@ body {
     color: var(--color-faded);
 }
 
-.is_approved {
-    color: var(--color-is_approved);
-}
-
-#reviewForm {
-    margin-top: 1.3em;
+.approval {
+    color: var(--color-approval);
 }

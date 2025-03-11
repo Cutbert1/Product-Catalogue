@@ -85,27 +85,36 @@ Project can be improved by adding ordering page were  site unregistered site use
 |Signed up user can login and review products|Review products|Click on a product and provide review ![signup-review](./static/images/readme-images/manual-test-images/signup-review.jpg)|Review submitted|
 
 ### Lighthouse Performance
-|View Tested|   Outcome of the audit  |Soulution Applied|Screenshot of clear Validator output|
-|:------------|:----------------|:-------------|:------------|
+|View Tested|   Outcome of the audit |Screenshot of clear Validator output|
+|:------------|:----------------|:-------------|
+|Mobil|Lighthouse report, mobile|![mobile](./static/images/readme-images/lighthouse/exhibition-mobile.jpg)|
+|Desktop|Lighthouse report, desktop|![desktop](./static/images/readme-images/lighthouse/exhibition-desktop.jpg)|
 ### Validation Testing
 |Page Tested|Screenshot of Errors and Warnings   |Solution Applied|Screenshot of clear Validation Output|
 |:------------|:----------------|:-------------|:------------|
+|Home page|![error](./static/images/readme-images/validation-test-images/home-page%20error.jpg)|Fix </a> end tag to align with nesting rules.Remove the trailing slash on <hr/> to clear the info message. This wasn’t an error|![error-fix](./static/images/readme-images/validation-test-images/home-page-error-fix.jpg)|
+|Exhibition page|![error](./static/images/readme-images/validation-test-images/exhibition-page-error.jpg)|Fixed unclosed div tag and other open elements|![error-fix](./static/images/readme-images/validation-test-images/exhibition-page-fix.jpg)|
+|Product details page|![error1](./static/images/readme-images/validation-test-images/product-details-error1.jpg) ![error2](./static/images/readme-images/validation-test-images/product-details-error2.jpg) ![error3](./static/images/readme-images/validation-test-images/product-details-error3.jpg)|Removed title tag, update p tag not to be a child of strong tag and used article tag|![fix](./static/images/readme-images/validation-test-images/product-details-error-fix.jpg)|
 ### Browser compatibility
 |Browser Tested|Functionality Tested|Visual Consistency|Outcome|
 |:------------:|:----------------:|:-------------:|:-------------:|
-|Browser Tested|Intended Appearance|Intended Responsiveness|
-|:------------:|:----------------:|:-------------:|
+|![chrome](./static/images/readme-images/browser-compatibility/chrome.jpg)|Navigation, Forms, Links and Buttons|Layout, design, content display is consistent|Good ![chrome1](./static/images/readme-images/browser-compatibility/chrome1.jpg)|
+|![edge](./static/images/readme-images/browser-compatibility/edge.jpg)|Navigation, Forms, Links and Buttons|Layout, design, content display is consistent|Good ![edge1](./static/images/readme-images/browser-compatibility/edge1.jpg)|
+|![firefox](./static/images/readme-images/browser-compatibility/firefox.jpg)|Navigation, Forms, Links and Buttons|Layout, design, content display is consistent|Good ![forefox1](./static/images/readme-images/browser-compatibility/firefox1.jpg)|
 ### Screen sizes Responsiveness  
 |Device Tested|Site responsive >=700px |Site responsive <699px|Render as expected|
 |:------------:|:----------------:|:-------------:|:--------------:|
-### Pages Responsivnes
-|Home Page|Register Page|Gallery Page|About Us Page|Donation Page|Thank you Page|
-|:------------:|:----------------:|:-------------:|:--------------:|:--------:|
+|iPhone 12 Pro (Mobile)|N/A|Good|Good 390px X 844px ![iPhone 12 pro](./static/images/readme-images/Screen%20sizes%20Responsivenes/iPhone12pro.jpg)|  
+|iPad Mini (Tablet)|Good|N/A|Good 768px X 1024px ![iPad Mini](./static/images/readme-images/Screen%20sizes%20Responsivenes/iPad-mini.jpg)|
+|iPad Air (Laptop)|Good|N/A|Good 820px X 1180px ![iPad air](./static/images/readme-images/Screen%20sizes%20Responsivenes/iPad-air.jpg)|
+|Nest Hub Max (Desktop)|Good|N/A|Good 1280px X 800px ![nest hub max](./static/images/readme-images/Screen%20sizes%20Responsivenes/Net-bub-max.jpg)|
+
 ### Accessibility
 |Color Contrats Testing|Alternative Text for Images |Outcome|
 |:------------|:------------------|:---------------:|
 ## Technologies Used
 ### Languages Used
+
 ## Bugs
 #### Bugs Resolved
 |Bug|   Description |Solution Applied|Result|
@@ -115,7 +124,26 @@ Project can be improved by adding ordering page were  site unregistered site use
 |:------------|:----------------|:-------------|:------------|
 ### Libraries
 ## Deployment
+### Deployment Steps
+* Ensure all installed packages are in requirements.txt
+![requirement](./static/images/readme-images/deployment/requirement.jpg)
+* Ensure Procfile has web process followed by the command to execute Django project.
+* On settings.py set DEBUG=False
+![debug](./static/images/readme-images/deployment/debug.jpg)
+* Fork or clone product-catalogue repository
+* Sign into Heroku and go to settings tab and ensure all config variables are added, Key:Value pairs
+![settings](./static/images/readme-images/deployment/settings.jpg)
+* Go to Deploy tab to continue deployment
+* Ensure Heroku App is linked to GitHub repository
+![github](./static/images/readme-images/deployment/github.jpg)
+* Click on deploy branch
+![deploy](./static/images/readme-images/deployment/deploy.jpg)
+
 ## Credits
 ### Codes
+* Code Institue Django Project. I Think therefore I Blog
 ### Tutorials
+* Tutor Support
+* [stackflow](https://stackoverflow.com/questions)
 ### Text Content
+* Wikipedia

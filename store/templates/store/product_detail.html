@@ -3,10 +3,10 @@
 {% load crispy_forms_tags %}
  
 {% block content %}
-
-<title>{{ product.name }} - Product Detail</title>
+ 
+<!-- <title>{{ product.name }} - Product Detail</title> -->
 <div class="container">
-    <div class="col-md-12 ">
+    <div class="col-md-12">
         <h2>{{ product.name }}</h2>
     </div>
     <div class="col-md-4">
@@ -17,12 +17,14 @@
         {% endif %}
     </div>
 </div>
-
+ 
 <div class="card-body">
     <article class="card-text">
         <h2>Product Description</h2>
-        <p>{{ product.description | safe }}</p>
-        <p><strong>Price: ${{ product.price }}</strong></p>
+        <article class="card-text">
+            {{ product.description | safe }}
+            <p class="font-weight-bold">Price: ${{ product.price }}</p>
+        </article>
     </article>
     <div>
         <a href="{% url 'home' %}">Back to Product List</a> 
@@ -54,7 +56,7 @@
                             </span> wrote:
                         </p>
                         <div id="review{{ review.id }}">
-                            <strong>{{ review.caption | linebreaks }}</strong>
+                            <!-- <strong>{{ review.caption | linebreaks }}</strong> -->
                             {{ review.body | linebreaks}}
                         </div>
                         {% if not review.is_approved and review.author == user %}
@@ -76,19 +78,18 @@
         <div class="col-md-8 card mb-4 mt-3">
             <div class="card-body">
                 {% if user.is_authenticated %}
-                
+ 
                     <h3>Leave a Review</h3>
                     <p>Reviewing as: <strong>{{ user.username }}</strong></p>
                     <!-- <form id="reviewTitle" method="post"> -->
                     <!--{% csrf_token %} -->
                     <!--{{ review_caption | crispy }} -->
-                    </form>
                     <form id="reviewForm" method="post">
                         {% csrf_token %}
                         {{ review_form | crispy }}
                         <button id="submitButton" type="submit" class="btn btn-signup btn-lg">Submit Review</button>
                     </form>
-         
+ 
                     {% if form.errors %}
                         <div class="alert alert-danger mt-3">
                             <strong>There were errors in your submission:</strong>
@@ -129,8 +130,7 @@
     </div>
 </div>
 {% endblock content%}
-
+ 
 {% block extras %}
 <script src="{% static 'js/reviews.js' %}"></script>
 {% endblock %}
-
