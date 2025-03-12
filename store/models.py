@@ -10,7 +10,7 @@ STATUS = ((0, "Draft"), (1, "Published"))
 class Product(models.Model):
 
     name = models.CharField(
-        max_length=255, unique=True, verbose_name="Product Name" # noqa
+        max_length=255, unique=True, verbose_name="Product Name"
         )
     slug = models.SlugField(max_length=255, unique=True, null=True)
     marketer = models.ForeignKey(

@@ -44,6 +44,9 @@ class ExhibitionRegistration(models.Model):
     product_description = models.TextField(
         max_length=MAX_LENGTH_PRODUCT_DESCRIPTION
         )
+    product_registration_image = CloudinaryField(
+        "image", default="placeholder"
+        )
     is_read = models.BooleanField(default=False)
 
     def __str__(self):

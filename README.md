@@ -5,6 +5,11 @@ This project is for local community craft men to post their hand made products f
 The project is aimed at local community craft men, who uses locally sourced biodegradable materials to produce eco-friendly products. Users can post their products for improvement reviews, market promotion and organise product exhibition for local community. There for promote house hold usage for bio degradable products.
 ## Design
 ### Model Entity Relationship Diagram
+![lucid1](./static/images/readme-images/design/lucid1.jpg)
+![lucid2](./static/images/readme-images/design/lucid2.jpg)
+![lucid3](./static/images/readme-images/design/lucid3.jpg)
+![lucid4](./static/images/readme-images/design/lucid4.jpg)
+![lucid5](./static/images/readme-images/design/lucid5.jpg)
 ### Colour Scheme
 ### Topography
 ## Features

@@ -7,13 +7,13 @@
 <!-- <title>{{ product.name }} - Product Detail</title> -->
 <div class="container">
     <div class="col-md-12">
-        <h2>{{ product.name }}</h2>
+        <h2 class="text-center">{{ product.name }}</h2>
     </div>
-    <div class="col-md-4">
+    <div class="col-md-12 text-center">
         {% if "placeholder" in product.product_image.url %} 
-        <img src="{% static 'images/'|add:product.image.name %}" class="text-center" alt="product image">
+        <img src="{% static 'images/'|add:product.image.name %}" class="img-fluid" alt="product image">
         {% else %}
-        <img src="{{ product.products_image.url }}" class="text-center" alt="{{ product.name }}">
+        <img src="{{ product.products_image.url }}" class="img-fluid" alt="{{ product.name }}">
         {% endif %}
     </div>
 </div>
@@ -23,7 +23,7 @@
         <h2>Product Description</h2>
         <article class="card-text">
             {{ product.description | safe }}
-            <p class="font-weight-bold">Price: ${{ product.price }}</p>
+            <p class="font-weight-bold"><strong>Price: ${{ product.price }}</strong></p>
         </article>
     </article>
     <div>

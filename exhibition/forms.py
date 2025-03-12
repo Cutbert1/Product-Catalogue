@@ -10,5 +10,6 @@ class ExhibitionRegistrationForm(forms.ModelForm):
             "address",
             "email",
             "phone_number",
-            "product_description"
+            "product_description",
+            "product_registration_image"
             )
