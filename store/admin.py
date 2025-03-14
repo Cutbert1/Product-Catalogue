@@ -4,6 +4,8 @@ from django_summernote.admin import SummernoteModelAdmin
 from django.core.exceptions import FieldDoesNotExist # noqa
 from django.utils.translation import gettext_lazy as _
 
+# Register your models here.
+
 
 @admin.register(Product)
 class ProductAdmin(SummernoteModelAdmin):
@@ -80,7 +82,5 @@ class ProductAdmin(SummernoteModelAdmin):
                     params={'field': field, 'model': self.model.__name__},
                 )
 
-
-# Register your models here.
 
 admin.site.register(Review)

@@ -1,5 +1,6 @@
 from django.db import models
 from cloudinary.models import CloudinaryField
+from django.utils import timezone
 
 STATUS = ((0, "Draft"), (1, "Published"))
 
@@ -37,15 +38,14 @@ class ExhibitionRegistration(models.Model):
     MAX_LENGTH_ADDRESS = 255
     MAX_LENGTH_PRODUCT_DESCRIPTION = 1000
 
+    registration_date = models.DateTimeField(
+       default=timezone.now, verbose_name="Registration Date")
     business_name = models.CharField(max_length=MAX_LENGTH_BUSINESS_NAME)
     address = models.CharField(max_length=MAX_LENGTH_ADDRESS)
     email = models.EmailField()
     phone_number = models.CharField(max_length=15)
     product_description = models.TextField(
         max_length=MAX_LENGTH_PRODUCT_DESCRIPTION
-        )
-    product_registration_image = CloudinaryField(
-        "image", default="placeholder"
         )
     is_read = models.BooleanField(default=False)
 

@@ -16,7 +16,7 @@ def up_coming_exhibition(request):
         if exhibition_registration_form.is_valid():
             exhibition_registration_form.save()
             messages.success(
-                request, "Your registration for the exhibition has been successfully submitted!") # noqa
+                request, "Your registration for the exhibition has been successfully submitted!")  # noqa
             return redirect('exhibition')
     else:
         exhibition_registration_form = ExhibitionRegistrationForm()

@@ -4,7 +4,7 @@ This project is for local community craft men to post their hand made products f
 #### Project Purpose and user Demography
 The project is aimed at local community craft men, who uses locally sourced biodegradable materials to produce eco-friendly products. Users can post their products for improvement reviews, market promotion and organise product exhibition for local community. There for promote house hold usage for bio degradable products.
 ## Design
-### Model Entity Relationship Diagram
+### Entity Relationship Diagram
 ![lucid1](./static/images/readme-images/design/lucid1.jpg)
 ![lucid2](./static/images/readme-images/design/lucid2.jpg)
 ![lucid3](./static/images/readme-images/design/lucid3.jpg)
@@ -40,7 +40,7 @@ Page for site owner(super user) to manage products, user reviews and exhibition 
 Displays a sign up page were email address is optional, and details the password criteria ![sign-up](./static/images/readme-images/features%20-images/sign-up.jpg)
 
 #### Future features Improvement 
-Project can be improved by adding ordering page were  site unregistered site users can purchase an item
+Project can be improved by adding ordering page where unregistered site users can purchase an item
 ## Manual Testing
 ### User Story with Acceptance criteria Features Testing
 #### User Story: Site Admin log in
@@ -94,12 +94,33 @@ Project can be improved by adding ordering page were  site unregistered site use
 |:------------|:----------------|:-------------|
 |Mobil|Lighthouse report, mobile|![mobile](./static/images/readme-images/lighthouse/exhibition-mobile.jpg)|
 |Desktop|Lighthouse report, desktop|![desktop](./static/images/readme-images/lighthouse/exhibition-desktop.jpg)|
-### Validation Testing
+### Validation Testing - HTML and Custom CSS [W3C HTML](https://validator.w3.org/) and [W3C CSS Jigsaw](https://jigsaw.w3.org/css-validator/)
 |Page Tested|Screenshot of Errors and Warnings   |Solution Applied|Screenshot of clear Validation Output|
 |:------------|:----------------|:-------------|:------------|
 |Home page|![error](./static/images/readme-images/validation-test-images/home-page%20error.jpg)|Fix </a> end tag to align with nesting rules.Remove the trailing slash on <hr/> to clear the info message. This wasn’t an error|![error-fix](./static/images/readme-images/validation-test-images/home-page-error-fix.jpg)|
 |Exhibition page|![error](./static/images/readme-images/validation-test-images/exhibition-page-error.jpg)|Fixed unclosed div tag and other open elements|![error-fix](./static/images/readme-images/validation-test-images/exhibition-page-fix.jpg)|
 |Product details page|![error1](./static/images/readme-images/validation-test-images/product-details-error1.jpg) ![error2](./static/images/readme-images/validation-test-images/product-details-error2.jpg) ![error3](./static/images/readme-images/validation-test-images/product-details-error3.jpg)|Removed title tag, update p tag not to be a child of strong tag and used article tag|![fix](./static/images/readme-images/validation-test-images/product-details-error-fix.jpg)|
+|style.css|N/A|N/A|![css](./static/images/readme-images/validation-test-images/css.jpg)|
+### Validation Testing - Python Store app [PEP8 Python Validator](https://pep8ci.herokuapp.com/)
+|Page Tested|Screenshot of Errors and Warnings   |Solution Applied|Screenshot of clear Validation Output|
+|:------------|:----------------|:-------------|:------------|
+|models.py|No error or warning|N/A|![store-model](./static/images/readme-images/validation-test-images/store-model.jpg)|
+|views.py|No error or warning|N/A|![store-views](./static/images/readme-images/validation-test-images/store-views.jpg)
+|forms.py|No error or warning|N/A|![store-forms](./static/images/readme-images/validation-test-images/store-forms.jpg)|
+|admin.py|No error or warning|N/A|![store-admin](./static/images/readme-images/validation-test-images/store-admin.jpg)|
+|urls.py|No error or warning|N/A|![store-urls](./static/images/readme-images/validation-test-images/store-urls.jpg)|
+### Validation Testing - Python Exhibition app [PEP8 Python Validator](https://pep8ci.herokuapp.com/)
+|Page Tested|Screenshot of Errors and Warnings   |Solution Applied|Screenshot of clear Validation Output|
+|:------------|:----------------|:-------------|:------------|
+|models.py|No error or warning|N/A|![exhibition-model](./static/images/readme-images/validation-test-images/exhibition-model.jpg)|
+|views.py|No error or warning|N/A|![exhibition-views](./static/images/readme-images/validation-test-images/exhibition-views.jpg)|
+|forms.py|No error or warning|N/A|![exhibition-forms](./static/images/readme-images/validation-test-images/exhibition-forms.jpg)|
+|admin.py|No error or warning|N/A|![exhibition-admin](./static/images/readme-images/validation-test-images/exhibition-admin.jpg)|
+|urls.py|No error or warning|N/A|![exhibition-urls](./static/images/readme-images/validation-test-images/exhibition-urls.jpg)|
+### Validation Testing - JavaScript [JSHint](https://jshint.com/)
+|Page Tested|Screenshot of Errors and Warnings   |Solution Applied|Screenshot of clear Validation Output|
+|:------------|:----------------|:-------------|:------------|
+|reviews.js|No error, 22 warnings about using ES6 version of JSHint|N/A|![js](./static/images/readme-images/validation-test-images/js.jpg)|
 ### Browser compatibility
 |Browser Tested|Functionality Tested|Visual Consistency|Outcome|
 |:------------:|:----------------:|:-------------:|:-------------:|
@@ -146,7 +167,7 @@ Project can be improved by adding ordering page were  site unregistered site use
 
 ## Credits
 ### Codes
-* Code Institue Django Project. I Think therefore I Blog
+* Code Institue Django Project. **I Think therefore I Blog**
 ### Tutorials
 * Tutor Support
 * [stackflow](https://stackoverflow.com/questions)

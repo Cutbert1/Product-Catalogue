@@ -19,4 +19,8 @@ class ExhibitionAdmin(SummernoteModelAdmin):
 @admin.register(ExhibitionRegistration)
 class ExhibitionRegistrationAdmin(admin.ModelAdmin):
 
-    list_display = ('product_description', 'is_read',)
+    list_display = (
+        'product_description', 'is_read', 'business_name', 'registration_date',
+        )
+    list_filter = ('registration_date', 'business_name')
+    search_fields = ('business_name',)

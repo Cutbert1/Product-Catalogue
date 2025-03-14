@@ -131,5 +131,5 @@ def delete_user_review(review):
     review.delete()
 
 
-def redirect_to_product_detail(slug): # noqa
+def redirect_to_product_detail(slug):  # noqa
     return HttpResponseRedirect(reverse("product_detail", args=[slug]))
