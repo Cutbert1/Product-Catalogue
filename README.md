@@ -15,17 +15,20 @@ The project is aimed at local community craft men, who uses locally sourced biod
 ## Features
 The core features/functionality of  this project is categorised as below. Future improvements are also highlighted in this section.
 #### Navbar
-A responsive navigation header where all the links to other html pages are embedded rendered through base.html.
-![navbar-feature](./static/images/readme-images/features%20-images/navbar-feature.jpg)
+A responsive navigation header where all the links to other html pages are embedded rendered through base.html inclucing dropdown for Signup and Log in.
+![navbar-feature](./static/images/readme-images/features%20-images/navbar.jpg)
 Each navbar item takes you to the desired page.
 #### Exhibition page
-Details of upcoming exhibition for local craft men (users) to view and register for the event
+Details of upcoming exhibition for local craft men (users) to view and register for the event. Includes date and time stamp of registration to enable admin filtering and capacity management.
 ![exhibition1](./static/images/readme-images/features%20-images/exhibition1.jpg)
 ![exhibition2](./static/images/readme-images/features%20-images/exhibition2.jpg)
 ![exhibition3](./static/images/readme-images/features%20-images/exhibition3.jpg)
 #### Home page
 Displays a paginated  list of products, with marketers/producers name, price of price and date and time posted ready for reviews and promotion
 ![home](./static/images/readme-images/features%20-images/home.jpg)
+#### Pagination
+This includes page numbers and a clearer indication of the current page.
+![pagination](./static/images/readme-images/features%20-images/pagination.jpg)
 #### Prodct Detail page
 Displays a product when clicked from the home page, with product image, price and  descriptions with approved and unapproved reviews.
 ![product-details1](./static/images/readme-images/features%20-images/product-details1.jpg)
@@ -55,8 +58,8 @@ Project can be improved by adding ordering page where unregistered site users ca
 #### User Story: View list of products on home page
 |Key Features|   User Value   |Functionality Test|Outcome|
 |:------------|:----------------|:-------------|:------------|
-|When there are multiple approved products in the database, these products is shown as a list. The user sees a list of products once they open the home page|User views all products on landing page. |Login as a user to view list on products on landing page|View list of products as a user.![view-product-list](./static/images/readme-images/manual-test-images/view-product-list.jpg)|
-|The user has access to all product names and pagination, to select what to review.|User can view paginated list of products|Login as a user to view list on products on landing page, click next to view more products|More list of product is shown to the user when next is clicked. ![pagination](./static/images/readme-images/manual-test-images/paginated.jpg)|
+|When there are multiple approved products in the database, these products are shown as a list. The user sees a list of products once they open the home page|User views all products on landing page. |Signed up and not signed up users to view list on products on landing page|View list of products as a user.![view-product-list](./static/images/readme-images/manual-test-images/view-product-list.jpg)|
+|The user has access to all product names and pagination, to select what to review.|User can view paginated list of products|Login as a user to view list on products on landing page, click next to view more products|More list of product is shown to the user when page number is clicked. ![pagination](./static/images/readme-images/manual-test-images/paginated.jpg)|
 #### User Story: Open product details
 |Key Features:|   User Value   |Functionality Test|Outcome|
 |:------------|:----------------|:-------------|:------------|
@@ -97,7 +100,7 @@ Project can be improved by adding ordering page where unregistered site users ca
 ### Validation Testing - HTML and Custom CSS [W3C HTML](https://validator.w3.org/) and [W3C CSS Jigsaw](https://jigsaw.w3.org/css-validator/)
 |Page Tested|Screenshot of Errors and Warnings   |Solution Applied|Screenshot of clear Validation Output|
 |:------------|:----------------|:-------------|:------------|
-|Home page|![error](./static/images/readme-images/validation-test-images/home-page%20error.jpg)|Fix </a> end tag to align with nesting rules.Remove the trailing slash on <hr/> to clear the info message. This wasn’t an error|![error-fix](./static/images/readme-images/validation-test-images/home-page-error-fix.jpg)|
+|Home page|![error](./static/images/readme-images/validation-test-images/home-page%20error.jpg)|Fix </a> end tag to align with nesting rules. Remove the trailing slash on <hr/> to clear the info message. This wasn’t an error|No error but warning for possible misuse of aria-label ![error-fix](./static/images/readme-images/validation-test-images/home-page%20warning.jpg)|
 |Exhibition page|![error](./static/images/readme-images/validation-test-images/exhibition-page-error.jpg)|Fixed unclosed div tag and other open elements|![error-fix](./static/images/readme-images/validation-test-images/exhibition-page-fix.jpg)|
 |Product details page|![error1](./static/images/readme-images/validation-test-images/product-details-error1.jpg) ![error2](./static/images/readme-images/validation-test-images/product-details-error2.jpg) ![error3](./static/images/readme-images/validation-test-images/product-details-error3.jpg)|Removed title tag, update p tag not to be a child of strong tag and used article tag|![fix](./static/images/readme-images/validation-test-images/product-details-error-fix.jpg)|
 |style.css|N/A|N/A|![css](./static/images/readme-images/validation-test-images/css.jpg)|
@@ -139,7 +142,21 @@ Project can be improved by adding ordering page where unregistered site users ca
 |Color Contrats Testing|Alternative Text for Images |Outcome|
 |:------------|:------------------|:---------------:|
 ## Technologies Used
+* Bootstrap
+* Django
+* Summernote
+* Cloudinary
+* Whitenoise
+* Django Crispy Forms
+* Gunicorn
+* Database
+* Heroku
 ### Languages Used
+* Python
+* JavaScript
+* HTML
+* CSS
+* DTL
 
 ## Bugs
 #### Bugs Resolved

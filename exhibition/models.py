@@ -46,7 +46,7 @@ class ExhibitionRegistration(models.Model):
 
     Meta:
         verbose_name (str):  Model human-readable name.
-        ordering (list): Ordering by business name.
+        ordering (list): Ordering by registration_date.
     """
     MAX_LENGTH_BUSINESS_NAME = 255
     MAX_LENGTH_ADDRESS = 255
@@ -68,4 +68,4 @@ class ExhibitionRegistration(models.Model):
 
     class Meta:
         verbose_name = "Exhibition Registration"
-        ordering = ['business_name']
+        ordering = ['registration_date']

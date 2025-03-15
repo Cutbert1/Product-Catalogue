@@ -33,7 +33,8 @@ class ExhibitionRegistrationAdmin(admin.ModelAdmin):
     """
 
     list_display = (
-        'product_description', 'is_read', 'business_name', 'registration_date',
+        'product_description', 'is_read', 'business_name',
+        'registration_date', 'phone_number',
         )
     list_filter = ('registration_date', 'business_name')
     search_fields = ('business_name',)
