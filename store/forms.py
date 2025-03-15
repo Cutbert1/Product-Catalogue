@@ -1,8 +1,14 @@
-from .models import Review
 from django import forms
+from .models import Review
 
 
 class ReviewForm(forms.ModelForm):
+    """
+    Creating or updating Review instances with a form.
+
+    Associated with Review model, includes a single field
+    and also provides custom validation for the body field.
+    """
     class Meta:
         model = Review
         fields = ("body",)

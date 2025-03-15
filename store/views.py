@@ -63,6 +63,21 @@ def product_detail(request, slug):
 
 
 def update_review(request, review_id, slug):
+    """
+    Will update a review for an existing product.
+
+    For POST request to update a review,
+    it checks whether the user can edit this review.
+    If so, then save its modified version and send appropriate message to user.
+
+    Args:
+        request (HttpRequest): The HTTP request object.
+        review_id (int): The ID of the review to be updated.
+        slug (str): The slug for the product related to the review.
+
+    Returns:
+        HttpResponseRedirect: Redirects to product detail page.
+    """
     if request.method == "POST":
         product = get_product_by_slug(slug)
         review = get_review_by_id(review_id)
@@ -102,6 +117,21 @@ def redirect_to_product_detail(slug):
 
 
 def delete_review(request, slug, review_id):
+    """
+    Remove a review for a product.
+
+    Method takes care of deleting the review.
+    it also checks whether the user is the author of the review
+    before permitting deletion.
+
+    Args:
+    request: The HttpRequest object.
+    slug(str): (Required) The slug of the product.
+    review_id(int): The ID of the review to delete
+
+    Returns:
+    HttpResponseRedirect: Class for product details page redirection
+    """
     product = get_active_product(slug)
     review = get_review(review_id)
 

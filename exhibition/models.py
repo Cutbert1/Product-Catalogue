@@ -1,6 +1,6 @@
 from django.db import models
-from cloudinary.models import CloudinaryField
 from django.utils import timezone
+from cloudinary.models import CloudinaryField
 
 STATUS = ((0, "Draft"), (1, "Published"))
 
@@ -8,6 +8,13 @@ STATUS = ((0, "Draft"), (1, "Published"))
 
 
 class Exhibition(models.Model):
+    """
+    Renders information about exhibitions, including their status,
+    details, scheduling, and capacity.
+
+    Also includes a string representation and Meta options for
+    verbose name and ordering.
+    """
     STATUS_CHOICES = [
         (0, 'Draft'),
         (1, 'Scheduled'),
@@ -29,11 +36,18 @@ class Exhibition(models.Model):
 
     class Meta:
         verbose_name = "Exhibition"
-        verbose_name_plural = "Exhibitions"
         ordering = ['start_date']
 
 
 class ExhibitionRegistration(models.Model):
+    """
+    Stores information about businesses registering for an exhibition,
+    including their contact details and product description.
+
+    Meta:
+        verbose_name (str):  Model human-readable name.
+        ordering (list): Ordering by business name.
+    """
     MAX_LENGTH_BUSINESS_NAME = 255
     MAX_LENGTH_ADDRESS = 255
     MAX_LENGTH_PRODUCT_DESCRIPTION = 1000
@@ -54,5 +68,4 @@ class ExhibitionRegistration(models.Model):
 
     class Meta:
         verbose_name = "Exhibition Registration"
-        verbose_name_plural = "Exhibition Registrations"
         ordering = ['business_name']

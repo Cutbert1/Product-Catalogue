@@ -1,8 +1,12 @@
-from .models import ExhibitionRegistration
 from django import forms
+from .models import ExhibitionRegistration
 
 
 class ExhibitionRegistrationForm(forms.ModelForm):
+    """
+    Registering exhibitors for an exhibition.
+
+    """
     class Meta:
         model = ExhibitionRegistration
         fields = (

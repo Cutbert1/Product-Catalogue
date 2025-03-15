@@ -7,6 +7,23 @@ from .forms import ExhibitionRegistrationForm
 
 
 def up_coming_exhibition(request):
+    """
+    Upcoming exhibition page and registration process.
+
+    GET the most recent exhibition from the database.
+    Processes the exhibition registration form submission.
+    Renders the exhibition page with the exhibition
+    details and registration form.
+
+    Args:
+        request (HttpRequest): HTTP request object.
+
+    Returns:
+        HttpResponse: Rendered response of the exhibition page or a redirect
+                      to the exhibition page when form submission is
+                      successful.
+
+    """
     exhibition = Exhibition.objects.all().order_by('-updated_on').first()
 
     if request.method == 'POST':
