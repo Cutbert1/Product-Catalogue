@@ -162,9 +162,7 @@ Project can be improved by adding ordering page where unregistered site users ca
 #### Bugs Resolved
 |Bug|   Description |Solution Applied|Result|
 |:------------|:----------------|:-------------|:------------|
-#### Bugs Unresolved
-|Bug|   Description |Solution Applied|Result|
-|:------------|:----------------|:-------------|:------------|
+|Exhibition page image wasn’t rendering locally but dev tool was pointing at the image ![bug1](./static/images/readme-images/bugs/bug1.jpg) ![bug2](./static/images/readme-images/bugs/bug2.jpg)|At the early stage of the project before downloading cloudinary for live serving of images, exhibition image wasn’t rendering even with image field on model specifying where the image file should uploaded and html code on exhibition.html stating the local image source.| Rename image file. Update html image source to step through the folders hierarchy locally. Download cloudinary. Update model image field to cloudinary  and set default to placeholder. Use DTL if/else statement to reeference local image source and cloudinary image source on exhibition.html ![bug5](./static/images/readme-images/bugs/bug5.jpg)|![bug-fix](./static/images/readme-images/bugs/bug-fix.jpg)|
 ### Libraries
 ## Deployment
 ### Deployment Steps
@@ -190,3 +188,5 @@ Project can be improved by adding ordering page where unregistered site users ca
 * [stackflow](https://stackoverflow.com/questions)
 ### Text Content
 * Wikipedia
+### Product images and descriptions
+* [Handicraft-store](https://www.handicraftstore.co.uk/)

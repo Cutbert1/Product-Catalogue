@@ -19,6 +19,8 @@ class Product(models.Model):
 
     Methods:
         __str__: Returns a string representation of the product.
+
+    Template: store/product_detail.html
     """
 
     name = models.CharField(
@@ -59,6 +61,8 @@ class Review(models.Model):
     Meta:
         ordering: Review creation date in descending order.
         verbose_name: Name for model in admin interface.
+
+    Template: store/product_detail.html
     """
     product = models.ForeignKey(
         Product, on_delete=models.CASCADE, verbose_name='reviews'

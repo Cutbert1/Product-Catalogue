@@ -10,7 +10,8 @@ from .forms import ReviewForm
 
 
 class product_list(generic.ListView):
-    """View to list of published products with pagination."""
+    """View to list of published products with pagination.
+    """
 
     template_name = "store/index.html"
     paginate_by = 12

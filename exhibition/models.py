@@ -14,6 +14,8 @@ class Exhibition(models.Model):
 
     Also includes a string representation and Meta options for
     verbose name and ordering.
+
+    Template: exhibition/exhbition.html
     """
     STATUS_CHOICES = [
         (0, 'Draft'),
@@ -47,6 +49,8 @@ class ExhibitionRegistration(models.Model):
     Meta:
         verbose_name (str):  Model human-readable name.
         ordering (list): Ordering by registration_date.
+
+    Template: exhibition/exhbition.html
     """
     MAX_LENGTH_BUSINESS_NAME = 255
     MAX_LENGTH_ADDRESS = 255
