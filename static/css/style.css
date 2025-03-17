@@ -48,6 +48,7 @@ body {
     color: var(--color-white);
     margin: 4px;
     text-transform: uppercase;
+    font-weight: bold;
 }
  
 .masthead {

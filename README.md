@@ -1,8 +1,8 @@
 # Local Hand Craft Product Catalogue - Shoperite
 ## Introduction
-This project is for local community craft men to post their hand made products for reviews, improvements and marketing hence, organise exhibitions to market and promote their locally hand made products and businesses.
+This project is for local community craft men to advertise their hand crafted products for reviews, improvements and marketing hence, organise exhibitions to market and promote their locally hand made products and businesses to the community
 #### Project Purpose and user Demography
-The project is aimed at local community craft men, who uses locally sourced biodegradable materials to produce eco-friendly products. Users can post their products for improvement reviews, market promotion and organise product exhibition for local community. There for promote house hold usage for bio degradable products.
+The project is aimed at local community craft men, who uses locally sourced preferably biodegradable materials to produce eco-friendly products. Users can advertise their products for improvement reviews, market promotion and organise product exhibition for local community. There for promote house hold usage for biodegradable products.
 ## Design
 ### Entity Relationship Diagram
 ![lucid1](./static/images/readme-images/design/lucid1.jpg)
@@ -11,7 +11,14 @@ The project is aimed at local community craft men, who uses locally sourced biod
 ![lucid4](./static/images/readme-images/design/lucid4.jpg)
 ![lucid5](./static/images/readme-images/design/lucid5.jpg)
 ### Colour Scheme
+To maintain aesthetic and subtle look of the web page, following root colour scheme was used:
+* Primary colour: bright blue #3498DB
+* Secondary colour: Bright red #E74C3C
+* Text colour: police blue #34495E
+* Background colour: Light greyish blue #F5F7FA
+* Footer colour: Very dark desaturated blue #2C3E50
 ### Topography
+The Montserrat font is used for the logo. Sans Serif is used as the backup font. Lato and Robot font are used through out the page.
 ## Features
 The core features/functionality of  this project is categorised as below. Future improvements are also highlighted in this section.
 #### Navbar
@@ -47,7 +54,6 @@ Project can be improved by adding ordering page where unregistered site users ca
 ## Manual Testing
 ### User Story with Acceptance criteria Features Testing
 #### User Story: Site Admin log in
-
 |Key Features|   User Value   |Functionality Test|Outcome|
 |:------------|:----------------|:-------------|:------------|
 |As a site admin I can login to admin panel|Enable site admin (super user) manage products|Click on login and user super user credentials to log in and append /admin to urls. ![signin](./static/images/readme-images/manual-test-images/superuser-login.jpg) ![admin](./static/images/readme-images/manual-test-images/admin.jpg) |Logged into Django admin panel. ![admin2](./static/images/readme-images/manual-test-images/admin2.jpg)|
@@ -91,8 +97,9 @@ Project can be improved by adding ordering page where unregistered site users ca
 |:------------|:----------------|:-------------|:------------|
 |Site user can signup with username and password|Enable user to review products|Click on Signup, provide username and password then signup ![signup](./static/images/readme-images/manual-test-images/signup.jpg)|Successfully signed up ![signup2](./static/images/readme-images/manual-test-images/signup2.jpg)|
 |Signed up user can login and review products|Review products|Click on a product and provide review ![signup-review](./static/images/readme-images/manual-test-images/signup-review.jpg)|Review submitted|
-
-### Lighthouse Performance
+### Automated testing 
+No authomated test was prepared for this project. All features and functionalities are manually tested.
+### Lighthouse Performance/Accessibility
 |View Tested|   Outcome of the audit |Screenshot of clear Validator output|
 |:------------|:----------------|:-------------|
 |Mobil|Lighthouse report, mobile|![mobile](./static/images/readme-images/lighthouse/exhibition-mobile.jpg)|
@@ -137,10 +144,6 @@ Project can be improved by adding ordering page where unregistered site users ca
 |iPad Mini (Tablet)|Good|N/A|Good 768px X 1024px ![iPad Mini](./static/images/readme-images/Screen%20sizes%20Responsivenes/iPad-mini.jpg)|
 |iPad Air (Laptop)|Good|N/A|Good 820px X 1180px ![iPad air](./static/images/readme-images/Screen%20sizes%20Responsivenes/iPad-air.jpg)|
 |Nest Hub Max (Desktop)|Good|N/A|Good 1280px X 800px ![nest hub max](./static/images/readme-images/Screen%20sizes%20Responsivenes/Net-bub-max.jpg)|
-
-### Accessibility
-|Color Contrats Testing|Alternative Text for Images |Outcome|
-|:------------|:------------------|:---------------:|
 ## Technologies Used
 * Bootstrap
 * Django
@@ -164,6 +167,10 @@ Project can be improved by adding ordering page where unregistered site users ca
 |:------------|:----------------|:-------------|:------------|
 |Exhibition page image wasn’t rendering locally but dev tool was pointing at the image ![bug1](./static/images/readme-images/bugs/bug1.jpg) ![bug2](./static/images/readme-images/bugs/bug2.jpg)|At the early stage of the project before downloading cloudinary for live serving of images, exhibition image wasn’t rendering even with image field on model specifying where the image file should uploaded and html code on exhibition.html stating the local image source.| Rename image file. Update html image source to step through the folders hierarchy locally. Download cloudinary. Update model image field to cloudinary  and set default to placeholder. Use DTL if/else statement to reeference local image source and cloudinary image source on exhibition.html ![bug5](./static/images/readme-images/bugs/bug5.jpg)|![bug-fix](./static/images/readme-images/bugs/bug-fix.jpg)|
 ### Libraries
+[Google Fonts](https://fonts.google.com/) used to import the “Lato and Roboto” fonts used for this project.
+[GitHub](https://github.com/) used to store project code repository
+[Font Awesom](https://fontawesome.com/search?q=charity&o=r) used to add icons for aesthetic and user experience purposes.
+[Heroku](https://www.heroku.com/) used for production deployment of project
 ## Deployment
 ### Deployment Steps
 * Ensure all installed packages are in requirements.txt
@@ -182,7 +189,7 @@ Project can be improved by adding ordering page where unregistered site users ca
 
 ## Credits
 ### Codes
-* Code Institue Django Project. **I Think therefore I Blog**
+* Code Institue Django Project. **Codestar blog**
 ### Tutorials
 * Tutor Support
 * [stackflow](https://stackoverflow.com/questions)
@@ -190,3 +197,4 @@ Project can be improved by adding ordering page where unregistered site users ca
 * Wikipedia
 ### Product images and descriptions
 * [Handicraft-store](https://www.handicraftstore.co.uk/)
+* [Eco-chic-shop](https://eco-chic.shop/)

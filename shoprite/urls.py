@@ -16,9 +16,6 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-# from django.conf import settings
-# from store.views import my_store
-# from store import views as store_views
 
 
 urlpatterns = [
@@ -27,8 +24,4 @@ urlpatterns = [
     path("exhibition/", include("exhibition.urls"), name="exhibition-urls"),
     path("", include("store.urls"), name="store-urls"),
     path('summernote/', include('django_summernote.urls')),
-    # path('store/', my_store, name='store'),
-    # path('store/', my_store, name='store'),
-    # path('', include('store.urls'))
-    # path("store/", store_views.store, name='store')
 ]
