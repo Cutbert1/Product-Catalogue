@@ -166,6 +166,10 @@ No authomated test was prepared for this project. All features and functionaliti
 |Bug|   Description |Solution Applied|Result|
 |:------------|:----------------|:-------------|:------------|
 |Exhibition page image wasn’t rendering locally but dev tool was pointing at the image ![bug1](./static/images/readme-images/bugs/bug1.jpg) ![bug2](./static/images/readme-images/bugs/bug2.jpg)|At the early stage of the project before downloading cloudinary for live serving of images, exhibition image wasn’t rendering even with image field on model specifying where the image file should uploaded and html code on exhibition.html stating the local image source.| Rename image file. Update html image source to step through the folders hierarchy locally. Download cloudinary. Update model image field to cloudinary  and set default to placeholder. Use DTL if/else statement to reeference local image source and cloudinary image source on exhibition.html ![bug5](./static/images/readme-images/bugs/bug5.jpg)|![bug-fix](./static/images/readme-images/bugs/bug-fix.jpg)|
+#### Bugs Unresolved
+|Bug|   Description |Solution Applied|Result|
+|:------------|:----------------|:-------------|:------------|
+|Edit and delete not woking when clicked|I have a deadline to submit PP4 by 12 noon today **(Mon 17th March)**. Having finished all my work and manually tested all functionality which were working fine and finalised all readme documentation. After my last Heroku deployment just about to submit around 2am **(Mon 17th March)** edit and delete stopped working, locally and on deployed app. Of which I tested previously and all was ok as can be seen on manual test evidence above.|Checked on dev tool but no console error, checked on dev tool network tab to see if a request is being sent when edit or delete is clicked but it appears no request is being sent. Also no error message on terminal. DEBUG was set to True. Unable to figure out what is the issue as there are no indication through error message. I added console log message to see if that will be printed on dev tool console when edit or delete is clicked but still nothing. JavaScript is linked to the html. Tested both earlier and they were ok. And test evidence all are on README.md|Unresolved as I have tried contacting tutor support for guidance but today **(Mon 17th March)** is Irish bank holiday Saint Patrick's day. Also asked for guidance on stackoverflow community but no feedback at this time before submittion|
 ### Libraries
 [Google Fonts](https://fonts.google.com/) used to import the “Lato and Roboto” fonts used for this project.
 [GitHub](https://github.com/) used to store project code repository
@@ -192,7 +196,7 @@ No authomated test was prepared for this project. All features and functionaliti
 * Code Institue Django Project. **Codestar blog**
 ### Tutorials
 * Tutor Support
-* [stackflow](https://stackoverflow.com/questions)
+* [stackoverflow](https://stackoverflow.com/questions)
 ### Text Content
 * Wikipedia
 ### Product images and descriptions

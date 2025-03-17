@@ -50,3 +50,4 @@ const deleteModalElement = document.getElementById("deleteModal");
 } else {
     console.error("Issue with Modal");
 }
+

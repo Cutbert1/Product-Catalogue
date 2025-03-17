@@ -103,22 +103,9 @@ body {
     text-decoration: underline;
 }
  
-.btn-like {
-    color: var(--color-secondary);
-    border: none;
-    background: transparent;
-}
- 
 .btn-delete {
     color: var(--color-white);
     background: var(--color-secondary);
-}
- 
-.btn-like:hover,
-.btn-like:active {
-    color: var(--color-secondary);
-    background: transparent;
-    border: none;
 }
  
 .faded {
